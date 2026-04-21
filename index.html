@@ -1,138 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BuildAI Consulting</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-soft: #f1f5f9;
+      --text: #0f172a;
+      --text-soft: #64748b;
+      --border: #e2e8f0;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #10b981;
+      --hero-gradient: linear-gradient(135deg, #f8fafc 0%, #eef4ff 55%, #ecfdf5 100%);
+      --button-gradient: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+      --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 14px 40px rgba(15, 23, 42, 0.10);
+      --radius: 20px;
+      --radius-sm: 14px;
+      --container: 1120px;
+      --transition: 220ms ease;
+    }
 
-    /* =========================
-       RESET
-    ========================= */
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
     }
 
-    /* =========================
-       BRAND VARIABLES
-    ========================= */
-    :root {
-      --color-primary: #2563eb;
-      --color-secondary: #10b981;
-      --color-dark: #0f172a;
-      --color-gray: #64748b;
-      --color-light: #f8fafc;
-      --color-white: #ffffff;
+    html {
+      scroll-behavior: smooth;
     }
 
-    /* =========================
-       BASE STYLES
-    ========================= */
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--color-light);
-      color: var(--color-dark);
+      margin: 0;
+      font-family: "Inter", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    h1, h2, h3 {
-      font-weight: 600;
-      line-height: 1.2;
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
     }
 
-    p {
-      color: var(--color-gray);
-      font-size: 1rem;
-    }
-
-    /* =========================
-       LAYOUT
-    ========================= */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    /* =========================
-       BUTTONS
-    ========================= */
-    .btn {
-      display: inline-block;
-      background: var(--color-primary);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 6px;
+    a {
+      color: inherit;
       text-decoration: none;
-      font-weight: 500;
-      transition: all 0.2s ease;
     }
 
-    .btn:hover {
-      background: #1e4fd8;
-      transform: translateY(-1px);
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    /* =========================
-       CARD BASE
-    ========================= */
-    .card {
-      background: var(--color-white);
-      border-radius: 10px;
-      padding: 24px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-      transition: all 0.2s ease;
+    .section {
+      padding: 96px 0;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
+    .section--soft {
+      background: var(--surface-soft);
     }
 
-    /* =========================
-       GRID
-    ========================= */
-    .grid {
-      display: grid;
-      gap: 20px;
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-
-    /* =========================
-       TEXT HELPERS
-    ========================= */
-    .text-center {
-      text-align: center;
+    .section--white {
+      background: var(--surface);
     }
 
     .section-title {
-      font-size: 2rem;
-      margin-bottom: 20px;
+      margin: 0 0 18px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-align: center;
     }
 
-    .section-subtitle {
-      max-width: 700px;
+    .section-intro {
+      max-width: 760px;
       margin: 0 auto;
+      font-size: 1.1rem;
+      color: var(--text-soft);
+      text-align: center;
     }
 
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--button-gradient);
+      color: #ffffff;
+      font-size: 0.98rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), opacity var(--transition);
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.22);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(37, 99, 235, 0.26);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .text-muted {
+      color: var(--text-soft);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.65);
+      color: var(--primary-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+      backdrop-filter: blur(8px);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.08);
+    }
+
+    /* Placeholder sections for next steps */
+    .placeholder {
+      padding: 32px;
+      min-height: 120px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--text-soft);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 24px));
+      }
+
+      .section-intro {
+        font-size: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
   </style>
 </head>
-
 <body>
 
-  <!-- CONTENT STARTS NEXT BLOCK -->
+  <!-- Next block: sticky navbar -->
+  <section class="section">
+    <div class="container">
+      <div class="card placeholder">Block 2 will start here: Header + Hero</div>
+    </div>
+  </section>
+
+  <!-- Next block: challenge -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="card placeholder">Block 3: The challenge</div>
+    </div>
+  </section>
+
+  <!-- Next block: how I help -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="card placeholder">Block 3: How I help</div>
+    </div>
+  </section>
+
+  <!-- Next block: use cases -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="card placeholder">Block 4: Use cases</div>
+    </div>
+  </section>
+
+  <!-- Next block: case example -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="card placeholder">Block 5: Case example</div>
+    </div>
+  </section>
+
+  <!-- Next block: experience -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="card placeholder">Block 6: Experience</div>
+    </div>
+  </section>
+
+  <!-- Next block: final CTA -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="card placeholder">Block 7: Final CTA + Contact</div>
+    </div>
+  </section>
 
 </body>
 </html>
+
+
+<!-- NAVBAR -->
+<header style="position:sticky;top:0;background:rgba(255,255,255,0.8);backdrop-filter:blur(10px);border-bottom:1px solid #e2e8f0;z-index:100;">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:70px;">
+
+    <!-- BRAND -->
+    <div style="font-weight:800;font-size:1.1rem;">
+      Build<span style="color:#2563eb;">AI</span>
+    </div>
+
+    <!-- NAV LINKS -->
+    <nav style="display:flex;gap:24px;font-size:0.95rem;color:#475569;">
+      <a href="#how" style="transition:0.2s;">How I help</a>
+      <a href="#usecases" style="transition:0.2s;">Use cases</a>
+      <a href="#experience" style="transition:0.2s;">Experience</a>
+      <a href="#contact" style="transition:0.2s;">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="section" style="background:var(--hero-gradient);padding-top:120px;">
+  <div class="container" style="display:flex;align-items:center;gap:60px;flex-wrap:wrap;">
+
+    <!-- LEFT TEXT -->
+    <div style="flex:1;min-width:300px;">
+
+      <div class="eyebrow">
+        Practical AI for construction
+      </div>
+
+      <h1 style="margin:20px 0 20px;font-size:clamp(2.5rem,5vw,3.5rem);line-height:1.05;font-weight:800;">
+        Make your engineering business future-proof with AI
+      </h1>
+
+      <p style="font-size:1.15rem;color:var(--text-soft);max-width:520px;">
+        Strategic guidance and hands-on implementation to help construction and architecture firms 
+        stay competitive, reduce manual work, and make better decisions.
+      </p>
+
+      <div style="margin-top:30px;">
+        <a href="mailto:igpemabus@gmail.com" class="btn">
+          Book a free consultation
+        </a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div style="flex:1;min-width:300px;display:flex;justify-content:center;">
+      <div style="width:100%;max-width:420px;background:white;border-radius:24px;padding:20px;box-shadow:var(--shadow-md);">
+        
+        <!-- Placeholder image -->
+        <img src="hero-image.png" alt="AI visualization" style="border-radius:12px;">
+        
+      </div>
+    </div>
+
+  </div>
+</section>
+
