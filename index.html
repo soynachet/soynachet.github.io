@@ -1,148 +1,138 @@
-<header>
-  <h1>Make your engineering business future-proof with AI</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BuildAI Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <p style="max-width:700px;margin:20px auto;font-size:1.2rem;color:#555;">
-    Strategic guidance and hands-on implementation to help construction and architecture firms
-    stay competitive, reduce manual work, and make better decisions using AI.
-  </p>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <a href="mailto:igpemabus@gmail.com" style="display:inline-block;margin-top:20px;padding:14px 28px;background:#f39c12;color:white;border-radius:6px;text-decoration:none;font-weight:bold;">
-    Book a free consultation
-  </a>
-</header>
+  <style>
 
-<section style="padding:60px 20px; text-align:center; background:#f5f7fa;">
-  <h2>The challenge</h2>
+    /* =========================
+       RESET
+    ========================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <div style="max-width:700px;margin:30px auto;text-align:left;font-size:1.1rem;line-height:1.6;color:#444;">
-    <p>Engineering and construction firms are facing increasing pressure:</p>
-    
-    <ul style="margin-top:15px;">
-      <li>Deliver projects faster with fewer resources</li>
-      <li>Reduce manual and repetitive work</li>
-      <li>Stay competitive in a rapidly evolving market</li>
-      <li>Understand how AI can actually be applied in practice</li>
-    </ul>
+    /* =========================
+       BRAND VARIABLES
+    ========================= */
+    :root {
+      --color-primary: #2563eb;
+      --color-secondary: #10b981;
+      --color-dark: #0f172a;
+      --color-gray: #64748b;
+      --color-light: #f8fafc;
+      --color-white: #ffffff;
+    }
 
-    <p style="margin-top:20px;">
-      Many teams know AI could help — but don’t know where to start,
-      what to prioritize, or how to implement it without disrupting their operations.
-    </p>
-  </div>
-</section>
+    /* =========================
+       BASE STYLES
+    ========================= */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--color-light);
+      color: var(--color-dark);
+      line-height: 1.6;
+    }
 
-<section style="padding:60px 20px; text-align:center; background:white;">
-  <h2>How I help</h2>
+    h1, h2, h3 {
+      font-weight: 600;
+      line-height: 1.2;
+    }
 
-  <div style="max-width:700px;margin:30px auto;text-align:left;font-size:1.1rem;line-height:1.6;color:#444;">
-    
-    <p>I help engineering and architecture teams turn AI into practical improvements:</p>
+    p {
+      color: var(--color-gray);
+      font-size: 1rem;
+    }
 
-    <ul style="margin-top:15px;">
-      <li>Identify where AI can create real value in your workflows</li>
-      <li>Prioritize opportunities based on impact and feasibility</li>
-      <li>Implement practical solutions step by step</li>
-      <li>Support your team in adopting new tools and processes</li>
-    </ul>
+    /* =========================
+       LAYOUT
+    ========================= */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-    <p style="margin-top:20px;">
-      The goal is simple: move from uncertainty to clear, actionable improvements
-      that save time and improve decision-making.
-    </p>
+    section {
+      padding: 80px 0;
+    }
 
-  </div>
-</section>
+    /* =========================
+       BUTTONS
+    ========================= */
+    .btn {
+      display: inline-block;
+      background: var(--color-primary);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
 
+    .btn:hover {
+      background: #1e4fd8;
+      transform: translateY(-1px);
+    }
 
-<section style="padding:60px 20px; background:#f5f7fa; text-align:center;">
-  <h2>Where AI creates real impact</h2>
+    /* =========================
+       CARD BASE
+    ========================= */
+    .card {
+      background: var(--color-white);
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      transition: all 0.2s ease;
+    }
 
-  <div style="max-width:1000px;margin:40px auto;display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+    .card:hover {
+      transform: translateY(-4px);
+    }
 
-    <div style="width:300px;background:white;padding:25px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:left;">
-      <h3>Automating technical documentation</h3>
-      <p style="color:#555;">
-        Reduce the time spent creating reports, project documentation, and repetitive deliverables
-        by automating parts of the process with AI.
-      </p>
-    </div>
+    /* =========================
+       GRID
+    ========================= */
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
 
-    <div style="width:300px;background:white;padding:25px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:left;">
-      <h3>Improving design and planning workflows</h3>
-      <p style="color:#555;">
-        Use AI to explore alternatives faster, optimize layouts, and support decision-making
-        in early-stage design and planning.
-      </p>
-    </div>
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 
-    <div style="width:300px;background:white;padding:25px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:left;">
-      <h3>Internal tools for teams</h3>
-      <p style="color:#555;">
-        Build simple AI-powered tools tailored to your workflows to help teams access information,
-        generate content, and work more efficiently.
-      </p>
-    </div>
+    /* =========================
+       TEXT HELPERS
+    ========================= */
+    .text-center {
+      text-align: center;
+    }
 
-    <div style="width:300px;background:white;padding:25px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:left;">
-      <h3>Data analysis and decision support</h3>
-      <p style="color:#555;">
-        Turn project data into insights to support better decisions in planning, budgeting,
-        and project management.
-      </p>
-    </div>
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
 
-  </div>
-</section>
+    .section-subtitle {
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
+  </style>
+</head>
 
-<section style="padding:60px 20px; background:#f5f7fa; text-align:center;">
-  <h2>Experience</h2>
+<body>
 
-  <div style="max-width:700px;margin:40px auto;text-align:left;font-size:1.1rem;line-height:1.6;color:#444;">
+  <!-- CONTENT STARTS NEXT BLOCK -->
 
-    <p>
-      I have several years of experience working at the intersection of engineering, design,
-      and digital innovation within the construction sector.
-    </p>
-
-    <p>
-      My background includes leading generative design initiatives and working closely with
-      multidisciplinary teams to explore new ways of improving workflows, decision-making,
-      and project outcomes.
-    </p>
-
-    <p>
-      Over time, I have seen how technologies like BIM, generative design, and now AI
-      are transforming the industry — and how difficult it can be for companies to adapt
-      without a clear strategy.
-    </p>
-
-    <p>
-      This experience allows me to understand both the technical and business challenges,
-      and to translate AI into practical, valuable solutions for real-world projects.
-    </p>
-
-  </div>
-</section>
-
-
-<section style="padding:70px 20px; background:white; text-align:center;">
-  <h2>Let’s explore how AI can create value in your business</h2>
-
-  <p style="max-width:700px;margin:20px auto;font-size:1.1rem;line-height:1.6;color:#444;">
-    If you're exploring how to apply AI in your engineering or construction business,
-    I offer an initial free consultation to understand your situation and identify practical opportunities.
-  </p>
-
-  <a href="mailto:igpemabus@gmail.com" style="display:inline-block;margin-top:25px;padding:14px 28px;background:#f39c12;color:white;border-radius:6px;text-decoration:none;font-weight:bold;">
-    Book a free consultation
-  </a>
-
-  <p style="margin-top:25px;color:#555;">
-    Or contact me directly: <strong>igpemabus@gmail.com</strong>
-  </p>
-
-  <p style="margin-top:10px;color:#777;font-size:0.9rem;">
-    I usually respond within 24 hours.
-  </p>
-</section>
+</body>
+</html>
