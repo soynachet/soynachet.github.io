@@ -212,89 +212,151 @@
 
   
 <!-- HERO -->
-<section class="section" style="background:var(--hero-gradient);padding-top:140px;padding-bottom:120px;">
+<section class="section" style="
+background:var(--hero-gradient);
+padding-top:110px;
+padding-bottom:70px;
+">
 
-  <div class="container" style="max-width:900px;">
+  <div class="container" style="max-width:1100px;">
 
-    <!-- BRAND -->
-    <div style="margin-bottom:40px;font-size:2rem;font-weight:800;letter-spacing:-0.03em;">
+    <div style="
+      display:grid;
+      grid-template-columns:1.4fr 0.8fr;
+      gap:60px;
+      align-items:center;
+    ">
 
-      <span style="color:#0f172a;">
-        Practical
-      </span>
+      <!-- LEFT -->
+      <div>
 
-      <span style="color:#4f7cff;">
-        AI
-      </span>
+        <h1 style="
+          margin:0 0 24px;
+          font-size:clamp(3.2rem,6vw,5rem);
+          line-height:0.95;
+          font-weight:800;
+          letter-spacing:-0.05em;
+          color:var(--text-dark);
+          max-width:850px;
+        ">
+          Practical AI for construction and engineering teams
+        </h1>
 
-      <span style="color:#475569;">
-        forConstruction
-      </span>
+        <p style="
+          font-size:1.18rem;
+          color:var(--text-soft);
+          max-width:700px;
+          line-height:1.7;
+          margin-bottom:34px;
+        ">
+          Identify practical opportunities, reduce repetitive work, and implement AI where it actually creates value.
+        </p>
 
-    </div>
-
-    <!-- HERO TEXT -->
-    <div style="max-width:760px;">
-
-      <h1 style="
-        margin:0 0 28px;
-        font-size:clamp(4rem,8vw,6rem);
-        line-height:0.95;
-        font-weight:800;
-        letter-spacing:-0.05em;
-        color:var(--text-dark);
-      ">
-        Practical AI for construction and engineering teams
-      </h1>
-
-      <p style="
-        font-size:1.35rem;
-        color:var(--text-soft);
-        max-width:760px;
-        line-height:1.7;
-        margin-bottom:42px;
-      ">
-        Identify practical opportunities, reduce repetitive work, and implement AI where it actually creates value.
-      </p>
-
-      <!-- CTA BUTTON -->
-      <a
-        href="https://calendly.com/igpemabus/30min"
-        target="_blank"
-        class="btn"
-        style="
-          display:inline-flex;
-          align-items:center;
-          gap:14px;
-          padding:20px 34px;
-          border-radius:999px;
-          font-size:1.08rem;
-          font-weight:700;
-          text-decoration:none;
-          box-shadow:0 12px 30px rgba(79,124,255,0.18);
-        "
-      >
-
-        <!-- Premium calendar icon -->
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+        <!-- CTA -->
+        <a
+          href="https://calendly.com/igpemabus/30min"
+          target="_blank"
+          class="btn"
+          style="
+            display:inline-flex;
+            align-items:center;
+            gap:14px;
+            padding:18px 30px;
+            border-radius:999px;
+            font-size:1.05rem;
+            font-weight:700;
+            text-decoration:none;
+            box-shadow:0 12px 30px rgba(79,124,255,0.18);
+          "
         >
-          <rect x="3" y="4" width="18" height="18" rx="4"></rect>
-          <line x1="16" y1="2" x2="16" y2="6"></line>
-          <line x1="8" y1="2" x2="8" y2="6"></line>
-          <line x1="3" y1="10" x2="21" y2="10"></line>
-        </svg>
 
-        Book a free AI consultation
+          <!-- Premium calendar icon -->
+          <svg
+            width="21"
+            height="21"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="4"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
 
-      </a>
+          Book a free AI consultation
+
+        </a>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div style="
+        display:flex;
+        justify-content:center;
+      ">
+
+        <div style="
+          background:rgba(255,255,255,0.55);
+          border:1px solid rgba(255,255,255,0.7);
+          backdrop-filter:blur(12px);
+          border-radius:28px;
+          padding:28px;
+          width:100%;
+          max-width:340px;
+          box-shadow:var(--shadow-md);
+        ">
+
+          <div style="
+            font-size:0.9rem;
+            color:var(--text-soft);
+            margin-bottom:14px;
+            font-weight:600;
+          ">
+            Free AI consultation
+          </div>
+
+          <div style="
+            font-size:1.8rem;
+            font-weight:800;
+            margin-bottom:10px;
+          ">
+            30 min
+          </div>
+
+          <div style="
+            color:var(--text-soft);
+            line-height:1.7;
+            margin-bottom:22px;
+          ">
+            Fridays · 09:00–16:00 CET  
+            Google Meet
+          </div>
+
+          <a
+            href="https://calendly.com/igpemabus/30min"
+            target="_blank"
+            style="
+              display:flex;
+              justify-content:center;
+              align-items:center;
+              background:#4f7cff;
+              color:white;
+              text-decoration:none;
+              padding:14px;
+              border-radius:14px;
+              font-weight:700;
+            "
+          >
+            Open calendar
+          </a>
+
+        </div>
+
+      </div>
 
     </div>
 
