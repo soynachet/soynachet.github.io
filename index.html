@@ -379,16 +379,16 @@ z-index:100;
 <section id="how-it-works"
   style="
   background:white;
-  padding:55px 0;
+  padding:28px 0;
 ">
 
   <div class="container"
        style="
        display:grid;
-       grid-template-columns:420px 1fr;
-       gap:70px;
+       grid-template-columns:380px 1fr;
+       gap:50px;
        align-items:center;
-       min-height:360px;
+       min-height:240px;
   ">
 
     <!-- LEFT QUESTION -->
@@ -396,25 +396,16 @@ z-index:100;
 
       <div class="card"
            style="
-           padding:42px;
-           border-radius:34px;
-           background:rgba(255,255,255,0.9);
-           box-shadow:0 20px 50px rgba(15,23,42,0.06);
+           padding:28px;
+           border-radius:28px;
+           background:rgba(255,255,255,0.95);
+           box-shadow:0 18px 40px rgba(15,23,42,0.05);
            border:1px solid rgba(226,232,240,0.8);
       ">
 
-        <div style="
-          font-size:0.95rem;
-          color:var(--text-soft);
-          font-weight:600;
-          margin-bottom:18px;
-        ">
-          Common industry challenges
-        </div>
-
         <h2 style="
           margin:0;
-          font-size:clamp(2rem,4vw,3rem);
+          font-size:clamp(1.7rem,3vw,2.6rem);
           line-height:1.05;
           font-weight:800;
           letter-spacing:-0.04em;
@@ -427,11 +418,15 @@ z-index:100;
            display:inline-flex;
            align-items:center;
            gap:10px;
-           margin-top:28px;
+           margin-top:22px;
            color:#2563eb;
            font-weight:700;
            text-decoration:none;
-        ">
+           font-size:1rem;
+           transition:opacity .2s ease;
+        "
+           onmouseover="this.style.opacity='0.75'"
+           onmouseout="this.style.opacity='1'">
 
           Explore practical AI solutions →
 
@@ -445,19 +440,27 @@ z-index:100;
     <div>
 
       <p style="
-        font-size:clamp(1.45rem,2.2vw,2.2rem);
-        line-height:1.7;
+        font-size:clamp(1.2rem,1.8vw,1.8rem);
+        line-height:1.9;
         letter-spacing:-0.02em;
         margin:0;
         color:var(--text);
         max-width:900px;
       ">
 
-        Too much <span style="color:#2563eb;font-weight:700;">manual work</span>,
+        Too much
+        <span style="color:#2563eb;font-weight:700;">
+          manual work
+        </span>,
+
         tight deadlines,
+
         repetitive tasks,
+
         fragmented tools,
+
         pressure to
+
         <span style="
           background:linear-gradient(135deg,#2563eb,#10b981);
           -webkit-background-clip:text;
@@ -466,13 +469,19 @@ z-index:100;
         ">
           deliver faster
         </span>,
+
         uncertainty around
+
         <span style="color:#2563eb;font-weight:700;">
           AI
         </span>,
+
         overloaded teams,
+
         disconnected workflows,
+
         not enough time to
+
         <span style="color:#10b981;font-weight:700;">
           innovate
         </span>...
@@ -484,7 +493,6 @@ z-index:100;
   </div>
 
 </section>
-
 <!-- USE CASES + EXPERIENCE -->
 <section id="use-cases" class="section" style="background:white;">
 
