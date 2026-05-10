@@ -257,108 +257,211 @@ z-index:100;
 
   
 
+
+
 <!-- SECTION 1 — CHALLENGES -->
-<section id="challenges" style="
-  background:#f8fafc;
-  padding:50px 0 40px;
-">
+<section class="challenges-section">
+  <div class="challenges-grid">
 
-  <div class="container" style="
-    display:grid;
-    grid-template-columns: 0.9fr 1.4fr;
-    gap:50px;
-    align-items:center;
-  ">
-
-    <!-- LEFT QUESTION CARD -->
-    <div style="
-      background:white;
-      border:1px solid #e2e8f0;
-      border-radius:34px;
-      padding:48px;
-      box-shadow:0 12px 40px rgba(15,23,42,0.05);
-    ">
-
-      <h2 style="
-        font-size:clamp(2.4rem,4vw,4.2rem);
-        line-height:0.95;
-        letter-spacing:-0.05em;
-        margin:0;
-        font-weight:800;
-        color:#0f172a;
-      ">
-        Does this<br>
-        sound<br>
+    <!-- LEFT -->
+    <div class="challenge-question-card">
+      <h2>
+        Does this <br />
+        sound <br />
         familiar?
       </h2>
-
     </div>
 
-    <!-- RIGHT TEXT -->
-    <div>
+    <!-- RIGHT -->
+    <div class="challenge-live-text">
 
-      <p style="
-        font-size:clamp(1.6rem,2.3vw,2.7rem);
-        line-height:1.7;
-        margin:0;
-        color:#0f172a;
-        letter-spacing:-0.02em;
-      ">
-
-        Too much
-        <span style="
-          background:linear-gradient(135deg,#4f6ef7,#6578ff);
-          -webkit-background-clip:text;
-          -webkit-text-fill-color:transparent;
-          font-weight:700;
-        ">manual work</span>,
-
-        tight deadlines,
-
-        repetitive tasks,
-
-        fragmented tools,
-
-        pressure to
-        <span style="
-          background:linear-gradient(135deg,#5d73ff,#6ec7a7);
-          -webkit-background-clip:text;
-          -webkit-text-fill-color:transparent;
-          font-weight:700;
-        ">deliver faster</span>,
-
-        uncertainty around
-        <span style="
-          background:linear-gradient(135deg,#5d73ff,#6b74ff);
-          -webkit-background-clip:text;
-          -webkit-text-fill-color:transparent;
-          font-weight:700;
-        ">AI</span>,
-
-        overloaded teams,
-
-        disconnected workflows,
-
-        BIM coordination that feels heavier than the value it creates,
-
-        too much documentation,
-
-        not enough time to
-        <span style="
-          background:linear-gradient(135deg,#7fc9c7,#65c37d);
-          -webkit-background-clip:text;
-          -webkit-text-fill-color:transparent;
-          font-weight:700;
-        ">innovate</span>
-        ...
-      </p>
+      <div class="typing-window">
+        <div id="line1" class="typing-line"></div>
+        <div id="line2" class="typing-line"></div>
+        <div id="line3" class="typing-line active">
+          <span id="typedText"></span>
+          <span class="cursor">|</span>
+        </div>
+      </div>
 
     </div>
-
   </div>
-
 </section>
 
+<style>
+/* SECTION */
+.challenges-section {
+  background: #f5f7fc;
+  padding: 80px 6%;
+  overflow: hidden;
+}
+
+/* GRID */
+.challenges-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* LEFT CARD */
+.challenge-question-card {
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(10,15,45,0.06);
+  border-radius: 42px;
+  padding: 60px;
+  backdrop-filter: blur(10px);
+}
+
+.challenge-question-card h2 {
+  font-size: clamp(54px, 6vw, 88px);
+  line-height: 0.92;
+  font-weight: 800;
+  color: #0d1330;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+/* RIGHT SIDE */
+.challenge-live-text {
+  display: flex;
+  align-items: center;
+  min-height: 340px;
+}
+
+.typing-window {
+  width: 100%;
+}
+
+.typing-line {
+  font-size: clamp(34px, 3vw, 56px);
+  line-height: 1.25;
+  font-weight: 500;
+  color: #0d1330;
+  min-height: 1.3em;
+  transition: opacity 0.4s ease;
+}
+
+.typing-line.old {
+  opacity: 0.4;
+}
+
+.typing-line.active {
+  font-weight: 500;
+}
+
+/* HIGHLIGHTS */
+.highlight-blue {
+  color: #5b6cff;
+  font-weight: 700;
+}
+
+.highlight-green {
+  color: #7fc8b0;
+  font-weight: 700;
+}
+
+.highlight-cyan {
+  color: #74a8df;
+  font-weight: 700;
+}
+
+/* CURSOR */
+.cursor {
+  animation: blink 1s infinite;
+  color: #0d1330;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .challenges-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .challenge-question-card {
+    padding: 40px;
+  }
+
+  .challenge-live-text {
+    min-height: 220px;
+  }
+}
+</style>
+
+<script>
+const lines = [
+  'Too much <span class="highlight-blue">manual work</span>',
+  'Tight deadlines',
+  'Repetitive tasks',
+  'Fragmented tools',
+  'Pressure to <span class="highlight-cyan">deliver faster</span>',
+  'Uncertainty around <span class="highlight-blue">AI</span>',
+  'Disconnected workflows',
+  'Too much documentation',
+  'BIM coordination feels heavier than the value it creates',
+  'Teams overloaded',
+  'No time to <span class="highlight-green">innovate</span>',
+  'Too many meetings'
+];
+
+const visibleLines = ["", "", ""];
+
+const line1 = document.getElementById("line1");
+const line2 = document.getElementById("line2");
+const typedText = document.getElementById("typedText");
+
+let index = 0;
+
+function typeLine(text, callback) {
+  let i = 0;
+  typedText.innerHTML = "";
+
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = text;
+  const plainText = tempDiv.textContent;
+
+  const typing = setInterval(() => {
+    typedText.textContent = plainText.slice(0, i);
+    i++;
+
+    if (i > plainText.length) {
+      clearInterval(typing);
+
+      visibleLines.shift();
+      visibleLines.push(text);
+
+      line1.innerHTML = visibleLines[0];
+      line2.innerHTML = visibleLines[1];
+
+      callback();
+    }
+  }, 35);
+}
+
+function cycleLines() {
+  const currentLine = lines[index];
+
+  typeLine(currentLine, () => {
+    index = (index + 1) % lines.length;
+
+    setTimeout(() => {
+      cycleLines();
+    }, 800);
+  });
+}
+
+cycleLines();
+</script>
+
+  
 
 
 
