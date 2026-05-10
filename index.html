@@ -262,6 +262,8 @@ z-index:100;
 
 
   
+
+
 <!-- SECTION 1 — CHALLENGES -->
 <section class="challenges-section">
   <div class="challenges-grid">
@@ -279,8 +281,9 @@ z-index:100;
     <div class="challenge-live-text">
 
       <div class="typing-window">
-        <div id="line1" class="typing-line"></div>
-        <div id="line2" class="typing-line"></div>
+        <div id="line1" class="typing-line old"></div>
+        <div id="line2" class="typing-line old"></div>
+
         <div id="line3" class="typing-line active">
           <span id="typedText"></span>
           <span class="cursor">|</span>
@@ -295,7 +298,7 @@ z-index:100;
 /* SECTION */
 .challenges-section {
   background: #f5f7fc;
-  padding: 80px 6%;
+  padding: 36px 6%;
   overflow: hidden;
 }
 
@@ -311,13 +314,13 @@ z-index:100;
 .challenge-question-card {
   background: rgba(255,255,255,0.55);
   border: 1px solid rgba(10,15,45,0.06);
-  border-radius: 42px;
-  padding: 60px;
+  border-radius: 36px;
+  padding: 38px;
   backdrop-filter: blur(10px);
 }
 
 .challenge-question-card h2 {
-  font-size: clamp(54px, 6vw, 88px);
+  font-size: clamp(46px, 5vw, 72px);
   line-height: 0.92;
   font-weight: 800;
   color: #0d1330;
@@ -325,11 +328,11 @@ z-index:100;
   margin: 0;
 }
 
-/* RIGHT SIDE */
+/* RIGHT */
 .challenge-live-text {
   display: flex;
   align-items: center;
-  min-height: 340px;
+  min-height: 220px;
 }
 
 .typing-window {
@@ -337,30 +340,25 @@ z-index:100;
 }
 
 .typing-line {
-  font-size: clamp(34px, 3vw, 56px);
-  line-height: 1.25;
+  font-size: clamp(26px, 2.3vw, 42px);
+  line-height: 1.35;
   font-weight: 500;
   color: #0d1330;
-  min-height: 1.3em;
-  transition: opacity 0.4s ease;
+  min-height: 1.35em;
+  transition: opacity 0.35s ease;
 }
 
 .typing-line.old {
-  opacity: 0.4;
+  opacity: 0.55;
 }
 
 .typing-line.active {
   font-weight: 500;
 }
 
-/* HIGHLIGHTS */
+/* HIGHLIGHT COLORS */
 .highlight-blue {
   color: #5b6cff;
-  font-weight: 700;
-}
-
-.highlight-green {
-  color: #7fc8b0;
   font-weight: 700;
 }
 
@@ -369,10 +367,14 @@ z-index:100;
   font-weight: 700;
 }
 
+.highlight-green {
+  color: #7fc8b0;
+  font-weight: 700;
+}
+
 /* CURSOR */
 .cursor {
   animation: blink 1s infinite;
-  color: #0d1330;
   font-weight: 300;
 }
 
@@ -386,15 +388,15 @@ z-index:100;
 @media (max-width: 900px) {
   .challenges-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
   }
 
   .challenge-question-card {
-    padding: 40px;
+    padding: 34px;
   }
 
   .challenge-live-text {
-    min-height: 220px;
+    min-height: 180px;
   }
 }
 </style>
@@ -409,59 +411,102 @@ const lines = [
   'Uncertainty around <span class="highlight-blue">AI</span>',
   'Disconnected workflows',
   'Too much documentation',
-  'BIM coordination feels heavier than the value it creates',
+  'BIM coordination that feels heavier than the value it creates',
   'Teams overloaded',
-  'No time to <span class="highlight-green">innovate</span>',
+  'Not enough time to <span class="highlight-green">innovate</span>',
   'Too many meetings'
 ];
-
-const visibleLines = ["", "", ""];
 
 const line1 = document.getElementById("line1");
 const line2 = document.getElementById("line2");
 const typedText = document.getElementById("typedText");
 
-let index = 0;
+let visibleLines = ["", "", ""];
+let currentIndex = 0;
 
-function typeLine(text, callback) {
-  let i = 0;
+/* TYPE HTML WITHOUT LOSING COLORS */
+function typeHTML(html, target, speed = 25) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, "text/html");
+  const nodes = [...doc.body.childNodes];
+
+  target.innerHTML = "";
+
+  let nodeIndex = 0;
+
+  function typeNode(node, parent, done) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const text = node.textContent;
+      let i = 0;
+
+      const interval = setInterval(() => {
+        parent.textContent += text[i];
+        i++;
+
+        if (i >= text.length) {
+          clearInterval(interval);
+          done();
+        }
+      }, speed);
+
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      const el = document.createElement(node.tagName);
+
+      [...node.attributes].forEach(attr => {
+        el.setAttribute(attr.name, attr.value);
+      });
+
+      parent.appendChild(el);
+
+      const children = [...node.childNodes];
+      let childIndex = 0;
+
+      function nextChild() {
+        if (childIndex < children.length) {
+          typeNode(children[childIndex], el, () => {
+            childIndex++;
+            nextChild();
+          });
+        } else {
+          done();
+        }
+      }
+
+      nextChild();
+    }
+  }
+
+  function nextNode() {
+    if (nodeIndex < nodes.length) {
+      typeNode(nodes[nodeIndex], target, () => {
+        nodeIndex++;
+        nextNode();
+      });
+    } else {
+      setTimeout(updateLines, 700);
+    }
+  }
+
+  nextNode();
+}
+
+function updateLines() {
+  visibleLines.shift();
+  visibleLines.push(lines[currentIndex]);
+
+  line1.innerHTML = visibleLines[0];
+  line2.innerHTML = visibleLines[1];
+
   typedText.innerHTML = "";
 
-  const tempDiv = document.createElement("div");
-  tempDiv.innerHTML = text;
-  const plainText = tempDiv.textContent;
+  currentIndex = (currentIndex + 1) % lines.length;
 
-  const typing = setInterval(() => {
-    typedText.textContent = plainText.slice(0, i);
-    i++;
-
-    if (i > plainText.length) {
-      clearInterval(typing);
-
-      visibleLines.shift();
-      visibleLines.push(text);
-
-      line1.innerHTML = visibleLines[0];
-      line2.innerHTML = visibleLines[1];
-
-      callback();
-    }
-  }, 35);
+  setTimeout(() => {
+    typeHTML(lines[currentIndex], typedText);
+  }, 250);
 }
 
-function cycleLines() {
-  const currentLine = lines[index];
-
-  typeLine(currentLine, () => {
-    index = (index + 1) % lines.length;
-
-    setTimeout(() => {
-      cycleLines();
-    }, 800);
-  });
-}
-
-cycleLines();
+typeHTML(lines[currentIndex], typedText);
 </script>
 
 
