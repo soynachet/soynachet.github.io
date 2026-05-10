@@ -361,63 +361,63 @@ z-index:100;
 
 
 
-  
-<!-- SECTION 2 — WHERE AI CREATES VALUE -->
+
+
+
+  <!-- SECTION 2 — WHAT I HELP YOU ACHIEVE -->
 <section id="use-cases" style="
-  background:linear-gradient(135deg,#0f172a 0%, #162235 45%, #1b2c2b 100%);
-  padding:70px 0;
-  position:relative;
-  overflow:hidden;
+background:linear-gradient(135deg,#0f172a 0%, #162235 45%, #1b2c2b 100%);
+padding:70px 0;
+overflow:hidden;
+position:relative;
 ">
 
-  <!-- subtle background effect -->
+  <!-- subtle glow -->
   <div style="
     position:absolute;
     inset:0;
-    opacity:0.08;
+    opacity:.08;
     background:
       radial-gradient(circle at 20% 20%, #4f6ef7 0%, transparent 40%),
       radial-gradient(circle at 80% 80%, #6ec7a7 0%, transparent 35%);
     pointer-events:none;
   "></div>
 
-  <div class="container" style="position:relative; z-index:2;">
+  <div class="container" style="position:relative;z-index:2;">
 
     <!-- TITLE -->
     <div style="
       text-align:center;
       max-width:900px;
-      margin:0 auto 60px;
+      margin:0 auto 55px;
     ">
 
       <h2 style="
-        font-size:clamp(2.6rem,5vw,4.8rem);
+        font-size:clamp(2.5rem,5vw,4.5rem);
         line-height:1;
-        letter-spacing:-0.05em;
-        margin:0 0 20px;
+        margin:0 0 18px;
         font-weight:800;
         color:white;
+        letter-spacing:-0.05em;
       ">
-        Where AI creates
+        What I help you
         <span style="
           background:linear-gradient(135deg,#4f6ef7,#6ec7a7);
           -webkit-background-clip:text;
           -webkit-text-fill-color:transparent;
         ">
-          practical value
+          achieve
         </span>
       </h2>
 
       <p style="
-        font-size:1.2rem;
-        line-height:1.7;
         color:rgba(255,255,255,0.72);
-        margin:0 auto;
-        max-width:780px;
+        font-size:1.1rem;
+        line-height:1.7;
+        margin:0;
       ">
-        Practical improvements that reduce repetitive work,
-        improve delivery, and help engineering and construction
-        teams focus on higher-value tasks.
+        Practical improvements that reduce friction,
+        save time and support better delivery.
       </p>
 
     </div>
@@ -429,180 +429,207 @@ z-index:100;
       gap:24px;
     ">
 
-      <!-- CARD 1 -->
-      <div style="
-        background:rgba(255,255,255,0.04);
-        border:1px solid rgba(255,255,255,0.08);
-        border-radius:28px;
-        padding:34px;
-        backdrop-filter:blur(8px);
-      ">
-        <div style="font-size:2rem;margin-bottom:18px;">📄</div>
+      <!-- CARD -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
 
-        <h3 style="
-          color:white;
-          font-size:1.45rem;
-          margin:0 0 14px;
-          font-weight:700;
-        ">
-          Technical documentation
-        </h3>
+          <!-- FRONT -->
+          <div class="flip-front">
+            <div class="icon-wrap">📄</div>
+            <h3>Technical documentation</h3>
+            <p>Reduce repetitive documentation and reporting effort.</p>
+          </div>
 
-        <p style="
-          color:rgba(255,255,255,0.72);
-          margin:0;
-          line-height:1.7;
-        ">
-          Reduce manual documentation work,
-          proposal creation and repetitive reporting.
-        </p>
+          <!-- BACK -->
+          <div class="flip-back">
+            <h3>Example scenario</h3>
+            <p>
+              Placeholder example text.<br><br>
+              A team spends too much time adapting repetitive documentation and proposal content...
+            </p>
+          </div>
+
+        </div>
       </div>
 
-      <!-- CARD 2 -->
-      <div style="
-        background:rgba(255,255,255,0.04);
-        border:1px solid rgba(255,255,255,0.08);
-        border-radius:28px;
-        padding:34px;
-      ">
-        <div style="font-size:2rem;margin-bottom:18px;">🏗️</div>
+      <!-- CARD -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
 
-        <h3 style="
-          color:white;
-          font-size:1.45rem;
-          margin:0 0 14px;
-          font-weight:700;
-        ">
-          BIM & workflow support
-        </h3>
+          <div class="flip-front">
+            <div class="icon-wrap">🏗️</div>
+            <h3>BIM & workflow support</h3>
+            <p>Reduce friction across BIM coordination and workflows.</p>
+          </div>
 
-        <p style="
-          color:rgba(255,255,255,0.72);
-          margin:0;
-          line-height:1.7;
-        ">
-          Improve coordination workflows and reduce
-          friction across fragmented tools and teams.
-        </p>
+          <div class="flip-back">
+            <h3>Example scenario</h3>
+            <p>
+              Placeholder example text.<br><br>
+              BIM processes feel heavier than the value they create...
+            </p>
+          </div>
+
+        </div>
       </div>
 
-      <!-- CARD 3 -->
-      <div style="
-        background:rgba(255,255,255,0.04);
-        border:1px solid rgba(255,255,255,0.08);
-        border-radius:28px;
-        padding:34px;
-      ">
-        <div style="font-size:2rem;margin-bottom:18px;">⚡</div>
+      <!-- CARD -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
 
-        <h3 style="
-          color:white;
-          font-size:1.45rem;
-          margin:0 0 14px;
-          font-weight:700;
-        ">
-          Faster delivery
-        </h3>
+          <div class="flip-front">
+            <div class="icon-wrap">⚡</div>
+            <h3>Faster delivery</h3>
+            <p>Identify bottlenecks and reduce repetitive effort.</p>
+          </div>
 
-        <p style="
-          color:rgba(255,255,255,0.72);
-          margin:0;
-          line-height:1.7;
-        ">
-          Identify bottlenecks and reduce repetitive
-          effort to help teams move faster.
-        </p>
+          <div class="flip-back">
+            <h3>Example scenario</h3>
+            <p>
+              Placeholder example text.<br><br>
+              Teams overloaded with repetitive coordination...
+            </p>
+          </div>
+
+        </div>
       </div>
 
-      <!-- CARD 4 -->
-      <div style="
-        background:rgba(255,255,255,0.04);
-        border:1px solid rgba(255,255,255,0.08);
-        border-radius:28px;
-        padding:34px;
-      ">
-        <div style="font-size:2rem;margin-bottom:18px;">📊</div>
+      <!-- CARD -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
 
-        <h3 style="
-          color:white;
-          font-size:1.45rem;
-          margin:0 0 14px;
-          font-weight:700;
-        ">
-          Better decisions
-        </h3>
+          <div class="flip-front">
+            <div class="icon-wrap">📊</div>
+            <h3>Better decisions</h3>
+            <p>Turn project information into useful insights.</p>
+          </div>
 
-        <p style="
-          color:rgba(255,255,255,0.72);
-          margin:0;
-          line-height:1.7;
-        ">
-          Turn dispersed project information
-          into practical insights.
-        </p>
+          <div class="flip-back">
+            <h3>Example scenario</h3>
+            <p>
+              Placeholder example text.<br><br>
+              Project information scattered across tools...
+            </p>
+          </div>
+
+        </div>
       </div>
 
-      <!-- CARD 5 -->
-      <div style="
-        background:rgba(255,255,255,0.04);
-        border:1px solid rgba(255,255,255,0.08);
-        border-radius:28px;
-        padding:34px;
-      ">
-        <div style="font-size:2rem;margin-bottom:18px;">🧠</div>
+      <!-- CARD -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
 
-        <h3 style="
-          color:white;
-          font-size:1.45rem;
-          margin:0 0 14px;
-          font-weight:700;
-        ">
-          Practical AI adoption
-        </h3>
+          <div class="flip-front">
+            <div class="icon-wrap">🧠</div>
+            <h3>Practical AI adoption</h3>
+            <p>Focus on realistic opportunities, not hype.</p>
+          </div>
 
-        <p style="
-          color:rgba(255,255,255,0.72);
-          margin:0;
-          line-height:1.7;
-        ">
-          Focus on realistic opportunities,
-          not AI hype.
-        </p>
+          <div class="flip-back">
+            <h3>Example scenario</h3>
+            <p>
+              Placeholder example text.<br><br>
+              Teams unsure where AI creates real value...
+            </p>
+          </div>
+
+        </div>
       </div>
 
-      <!-- CARD 6 -->
-      <div style="
-        background:rgba(255,255,255,0.04);
-        border:1px solid rgba(255,255,255,0.08);
-        border-radius:28px;
-        padding:34px;
-      ">
-        <div style="font-size:2rem;margin-bottom:18px;">👥</div>
+      <!-- CARD -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
 
-        <h3 style="
-          color:white;
-          font-size:1.45rem;
-          margin:0 0 14px;
-          font-weight:700;
-        ">
-          Team enablement
-        </h3>
+          <div class="flip-front">
+            <div class="icon-wrap">👥</div>
+            <h3>Team enablement</h3>
+            <p>Support teams in adopting practical workflows.</p>
+          </div>
 
-        <p style="
-          color:rgba(255,255,255,0.72);
-          margin:0;
-          line-height:1.7;
-        ">
-          Support teams in adopting tools
-          and new ways of working.
-        </p>
+          <div class="flip-back">
+            <h3>Example scenario</h3>
+            <p>
+              Placeholder example text.<br><br>
+              Helping teams adapt to new ways of working...
+            </p>
+          </div>
+
+        </div>
       </div>
 
     </div>
 
   </div>
-
 </section>
+
+<style>
+.flip-card{
+  height:290px;
+  perspective:1200px;
+  cursor:pointer;
+}
+
+.flip-inner{
+  position:relative;
+  width:100%;
+  height:100%;
+  transition:transform .7s ease;
+  transform-style:preserve-3d;
+}
+
+.flip-card.flipped .flip-inner{
+  transform:rotateY(180deg);
+}
+
+.flip-front,
+.flip-back{
+  position:absolute;
+  inset:0;
+  backface-visibility:hidden;
+  border-radius:28px;
+  padding:34px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(8px);
+}
+
+.flip-front:hover{
+  transform:translateY(-4px);
+}
+
+.flip-back{
+  transform:rotateY(180deg);
+}
+
+.icon-wrap{
+  font-size:2rem;
+  margin-bottom:18px;
+}
+
+.flip-front h3,
+.flip-back h3{
+  color:white;
+  margin:0 0 14px;
+}
+
+.flip-front p,
+.flip-back p{
+  color:rgba(255,255,255,.72);
+  line-height:1.7;
+}
+
+@media(max-width:980px){
+  #use-cases div[style*="grid-template-columns"]{
+    grid-template-columns:1fr 1fr !important;
+  }
+}
+
+@media(max-width:680px){
+  #use-cases div[style*="grid-template-columns"]{
+    grid-template-columns:1fr !important;
+  }
+}
+</style>
 
 
   
